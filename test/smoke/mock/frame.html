@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>mock editor frame</title>
+<style>
+  body { margin: 0; font: 15px/1.6 sans-serif; }
+  header { height: 56px; display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid #ddd; }
+  header button { padding: 6px 14px; }
+  .se-components-wrap { max-width: 720px; margin: 24px auto; }
+  .se-component { position: relative; }
+  .se-placeholder { position: absolute; left: 0; top: 0; color: #aaa; pointer-events: none; }
+  .se-documentTitle .se-title-text { position: relative; font-size: 28px; }
+  .se-text-paragraph { min-height: 26px; outline: none; }
+  .se-documentTitle .se-text-paragraph { min-height: 44px; }
+  .toast_area { position: fixed; bottom: 20px; left: 50%; background: #333; color: #fff; padding: 6px 12px; display: none; }
+  .se-popup { position: fixed; inset: 120px 20%; background: #fff; border: 1px solid #999; padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <button class="save_count_btn__q1" aria-label="임시저장된 글 보기, 0개">0</button>
+  <button class="save_btn__k3">저장</button>
+  <button class="publish_btn__m9">발행</button>
+</header>
+<div class="se-content">
+  <div class="se-components-wrap">
+    <div class="se-component se-documentTitle">
+      <div class="se-title-text">
+        <span class="se-placeholder">제목</span>
+        <p class="se-text-paragraph" contenteditable="true"></p>
+      </div>
+    </div>
+    <div class="se-component se-text">
+      <span class="se-placeholder">본문에 #을 이용하여 태그를 사용해보세요!</span>
+      <p class="se-text-paragraph" contenteditable="true"></p>
+    </div>
+  </div>
+</div>
+<div class="toast_area"></div>
+<script src="frame.js"></script>
+</body>
+</html>
